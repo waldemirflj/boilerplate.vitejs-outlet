@@ -1,11 +1,11 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
 // pages
-import PageOne from '../pages/main/PageOne';
-import PageTwo from '../pages/main/PageTwo';
+import PageOne from '@pages/main/PageOne';
+import PageTwo from '@pages/main/PageTwo';
 
 // shared
-import MainLayout from '../shared/layouts/Main';
+import MainLayout from '@shared/layouts/Main';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
