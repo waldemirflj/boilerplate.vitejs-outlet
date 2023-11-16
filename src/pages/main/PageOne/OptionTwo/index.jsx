@@ -4,15 +4,15 @@ function Index() {
   return (
     <>
       <div>
-        <p>Page one</p>
+        <p>Page option two</p>
 
         <div>
           <ul>
             <li>
-              <NavLink to="/">option 1</NavLink>
+              <NavLink to="/option-two/1">option 1</NavLink>
             </li>
             <li>
-              <NavLink to="/option-two">option 2</NavLink>
+              <NavLink to="/option-two/2">option 2</NavLink>
             </li>
           </ul>
         </div>

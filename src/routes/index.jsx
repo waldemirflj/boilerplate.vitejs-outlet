@@ -4,6 +4,10 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 import PageOne from '@pages/main/PageOne';
 import PageTwo from '@pages/main/PageTwo';
 
+import OptionOne from '@pages/main/PageOne/OptionOne';
+import OptionTwo from '@pages/main/PageOne/OptionTwo';
+import OptionTwoDetails from '@pages/main/PageOne/OptionTwo/Details';
+
 // default
 import NotFound from '@pages/NotFound';
 
@@ -21,4 +25,40 @@ const router = createBrowserRouter(
   )
 );
 
-export default router;
+const router2 = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <MainLayout />,
+      errorElement: <NotFound />,
+      children: [
+        {
+          element: <PageOne />,
+          children: [
+            {
+              index: true,
+              element: <OptionOne />,
+            },
+            {
+              path: "option-two",
+              element: <OptionTwo />,
+              children: [
+                {
+                  path: ":id",
+                  element: <OptionTwoDetails />,
+                }
+              ]
+            }
+          ]
+        },
+        {
+          path: "page-two",
+          element: <PageTwo />,
+        }
+      ]
+    }
+  ]
+);
+
+
+export default router2;
